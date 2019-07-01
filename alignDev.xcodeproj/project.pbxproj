@@ -8,12 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		9D547C1022CA0CAF001D8872 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D547C0F22CA0CAF001D8872 /* AppDelegate.swift */; };
-		9D547C1222CA0CAF001D8872 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D547C1122CA0CAF001D8872 /* ViewController.swift */; };
 		9D547C1522CA0CAF001D8872 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D547C1322CA0CAF001D8872 /* Main.storyboard */; };
 		9D547C1722CA0CB1001D8872 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D547C1622CA0CB1001D8872 /* Assets.xcassets */; };
 		9D547C1A22CA0CB1001D8872 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D547C1822CA0CB1001D8872 /* LaunchScreen.storyboard */; };
 		9D547C2522CA0CB1001D8872 /* alignDevTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D547C2422CA0CB1001D8872 /* alignDevTests.swift */; };
 		9D547C3022CA0CB1001D8872 /* alignDevUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D547C2F22CA0CB1001D8872 /* alignDevUITests.swift */; };
+		9D547C3F22CA0D48001D8872 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D547C3D22CA0D48001D8872 /* RegistrationViewController.swift */; };
+		9D547C4022CA0D48001D8872 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D547C3E22CA0D48001D8872 /* RegistrationViewController.xib */; };
+		9D70BCC322CA3FEC00EF18AD /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D70BCC022CA3FEC00EF18AD /* AppSettings.swift */; };
+		9D70BCC422CA3FEC00EF18AD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D70BCC122CA3FEC00EF18AD /* Constants.swift */; };
+		9D70BCC522CA3FEC00EF18AD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D70BCC222CA3FEC00EF18AD /* Settings.bundle */; };
+		9D70BCC722CA472300EF18AD /* StringCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D70BCC622CA472300EF18AD /* StringCategory.swift */; };
+		9DFEAEB222CA1F52000FB757 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEAEB022CA1F51000FB757 /* LoginViewController.swift */; };
+		9DFEAEB322CA1F52000FB757 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DFEAEB122CA1F52000FB757 /* LoginViewController.xib */; };
+		9DFEAEB522CA2094000FB757 /* UIViewControllerCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEAEB422CA2094000FB757 /* UIViewControllerCategory.swift */; };
+		9DFEAEC522CA2848000FB757 /* iGBSProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEAEB822CA2847000FB757 /* iGBSProgressHUD.swift */; };
+		9DFEAEC622CA2848000FB757 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEAEB922CA2847000FB757 /* MBProgressHUD.m */; };
+		9DFEAEC722CA2848000FB757 /* HttpUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEAEBA22CA2847000FB757 /* HttpUtils.swift */; };
+		9DFEAEC822CA2848000FB757 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEAEBB22CA2847000FB757 /* DataExtension.swift */; };
+		9DFEAEC922CA2848000FB757 /* HitTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEAEBC22CA2847000FB757 /* HitTestView.swift */; };
+		9DFEAECA22CA2848000FB757 /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEAEBD22CA2847000FB757 /* UILabelExtensions.swift */; };
+		9DFEAECB22CA2848000FB757 /* UIViewCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEAEBF22CA2847000FB757 /* UIViewCategory.m */; };
+		9DFEAECC22CA2848000FB757 /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEAEC022CA2847000FB757 /* UIColor+extensions.swift */; };
+		9DFEAECE22CA2848000FB757 /* StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEAEC222CA2848000FB757 /* StyleKit.swift */; };
+		9DFEAED022CA2848000FB757 /* HttpOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEAEC422CA2848000FB757 /* HttpOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +54,6 @@
 /* Begin PBXFileReference section */
 		9D547C0C22CA0CAF001D8872 /* alignDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alignDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D547C0F22CA0CAF001D8872 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9D547C1122CA0CAF001D8872 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9D547C1422CA0CAF001D8872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D547C1622CA0CB1001D8872 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D547C1922CA0CB1001D8872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +64,28 @@
 		9D547C2B22CA0CB1001D8872 /* alignDevUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = alignDevUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D547C2F22CA0CB1001D8872 /* alignDevUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alignDevUITests.swift; sourceTree = "<group>"; };
 		9D547C3122CA0CB1001D8872 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D547C3D22CA0D48001D8872 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		9D547C3E22CA0D48001D8872 /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
+		9D70BCC022CA3FEC00EF18AD /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppSettings.swift; path = alignDev/Settings/AppSettings.swift; sourceTree = SOURCE_ROOT; };
+		9D70BCC122CA3FEC00EF18AD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = alignDev/Settings/Constants.swift; sourceTree = SOURCE_ROOT; };
+		9D70BCC222CA3FEC00EF18AD /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = alignDev/Settings/Settings.bundle; sourceTree = SOURCE_ROOT; };
+		9D70BCC622CA472300EF18AD /* StringCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCategory.swift; sourceTree = "<group>"; };
+		9DFEAEB022CA1F51000FB757 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9DFEAEB122CA1F52000FB757 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		9DFEAEB422CA2094000FB757 /* UIViewControllerCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerCategory.swift; sourceTree = "<group>"; };
+		9DFEAEB622CA2846000FB757 /* alignDev-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "alignDev-Bridging-Header.h"; sourceTree = "<group>"; };
+		9DFEAEB722CA2847000FB757 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		9DFEAEB822CA2847000FB757 /* iGBSProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iGBSProgressHUD.swift; sourceTree = "<group>"; };
+		9DFEAEB922CA2847000FB757 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		9DFEAEBA22CA2847000FB757 /* HttpUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpUtils.swift; sourceTree = "<group>"; };
+		9DFEAEBB22CA2847000FB757 /* DataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
+		9DFEAEBC22CA2847000FB757 /* HitTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitTestView.swift; sourceTree = "<group>"; };
+		9DFEAEBD22CA2847000FB757 /* UILabelExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtensions.swift; sourceTree = "<group>"; };
+		9DFEAEBE22CA2847000FB757 /* UIViewCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewCategory.h; sourceTree = "<group>"; };
+		9DFEAEBF22CA2847000FB757 /* UIViewCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewCategory.m; sourceTree = "<group>"; };
+		9DFEAEC022CA2847000FB757 /* UIColor+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
+		9DFEAEC222CA2848000FB757 /* StyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleKit.swift; sourceTree = "<group>"; };
+		9DFEAEC422CA2848000FB757 /* HttpOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +136,12 @@
 		9D547C0E22CA0CAF001D8872 /* alignDev */ = {
 			isa = PBXGroup;
 			children = (
+				9D70BCBF22CA3FCD00EF18AD /* Settings */,
+				9DFEAED222CA2A75000FB757 /* Models */,
+				9DFEAED122CA2A6B000FB757 /* Views */,
+				9DFEAEAF22CA1F15000FB757 /* Utils */,
+				9DFEAEAE22CA1F07000FB757 /* Controllers */,
 				9D547C0F22CA0CAF001D8872 /* AppDelegate.swift */,
-				9D547C1122CA0CAF001D8872 /* ViewController.swift */,
 				9D547C1322CA0CAF001D8872 /* Main.storyboard */,
 				9D547C1622CA0CB1001D8872 /* Assets.xcassets */,
 				9D547C1822CA0CB1001D8872 /* LaunchScreen.storyboard */,
@@ -123,6 +166,64 @@
 				9D547C3122CA0CB1001D8872 /* Info.plist */,
 			);
 			path = alignDevUITests;
+			sourceTree = "<group>";
+		};
+		9D70BCBF22CA3FCD00EF18AD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9D70BCC022CA3FEC00EF18AD /* AppSettings.swift */,
+				9D70BCC122CA3FEC00EF18AD /* Constants.swift */,
+				9D70BCC222CA3FEC00EF18AD /* Settings.bundle */,
+			);
+			name = Settings;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		9DFEAEAE22CA1F07000FB757 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9DFEAEB022CA1F51000FB757 /* LoginViewController.swift */,
+				9DFEAEB122CA1F52000FB757 /* LoginViewController.xib */,
+				9D547C3D22CA0D48001D8872 /* RegistrationViewController.swift */,
+				9D547C3E22CA0D48001D8872 /* RegistrationViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9DFEAEAF22CA1F15000FB757 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9DFEAEBB22CA2847000FB757 /* DataExtension.swift */,
+				9DFEAEBC22CA2847000FB757 /* HitTestView.swift */,
+				9DFEAEC422CA2848000FB757 /* HttpOperation.swift */,
+				9DFEAEBA22CA2847000FB757 /* HttpUtils.swift */,
+				9DFEAEB822CA2847000FB757 /* iGBSProgressHUD.swift */,
+				9DFEAEB722CA2847000FB757 /* MBProgressHUD.h */,
+				9DFEAEB922CA2847000FB757 /* MBProgressHUD.m */,
+				9DFEAEC222CA2848000FB757 /* StyleKit.swift */,
+				9DFEAEC022CA2847000FB757 /* UIColor+extensions.swift */,
+				9DFEAEBD22CA2847000FB757 /* UILabelExtensions.swift */,
+				9DFEAEBE22CA2847000FB757 /* UIViewCategory.h */,
+				9DFEAEBF22CA2847000FB757 /* UIViewCategory.m */,
+				9DFEAEB422CA2094000FB757 /* UIViewControllerCategory.swift */,
+				9DFEAEB622CA2846000FB757 /* alignDev-Bridging-Header.h */,
+				9D70BCC622CA472300EF18AD /* StringCategory.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9DFEAED122CA2A6B000FB757 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9DFEAED222CA2A75000FB757 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +294,7 @@
 				TargetAttributes = {
 					9D547C0B22CA0CAF001D8872 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					9D547C1F22CA0CB1001D8872 = {
 						CreatedOnToolsVersion = 10.1;
@@ -229,8 +331,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DFEAEB322CA1F52000FB757 /* LoginViewController.xib in Resources */,
 				9D547C1A22CA0CB1001D8872 /* LaunchScreen.storyboard in Resources */,
 				9D547C1722CA0CB1001D8872 /* Assets.xcassets in Resources */,
+				9D547C4022CA0D48001D8872 /* RegistrationViewController.xib in Resources */,
+				9D70BCC522CA3FEC00EF18AD /* Settings.bundle in Resources */,
 				9D547C1522CA0CAF001D8872 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,8 +361,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D547C1222CA0CAF001D8872 /* ViewController.swift in Sources */,
+				9DFEAECE22CA2848000FB757 /* StyleKit.swift in Sources */,
+				9DFEAECB22CA2848000FB757 /* UIViewCategory.m in Sources */,
+				9DFEAEC722CA2848000FB757 /* HttpUtils.swift in Sources */,
+				9DFEAEC522CA2848000FB757 /* iGBSProgressHUD.swift in Sources */,
+				9DFEAECA22CA2848000FB757 /* UILabelExtensions.swift in Sources */,
+				9DFEAEC622CA2848000FB757 /* MBProgressHUD.m in Sources */,
+				9DFEAEB522CA2094000FB757 /* UIViewControllerCategory.swift in Sources */,
+				9D70BCC422CA3FEC00EF18AD /* Constants.swift in Sources */,
+				9DFEAEB222CA1F52000FB757 /* LoginViewController.swift in Sources */,
+				9D70BCC322CA3FEC00EF18AD /* AppSettings.swift in Sources */,
+				9DFEAEC822CA2848000FB757 /* DataExtension.swift in Sources */,
+				9D547C3F22CA0D48001D8872 /* RegistrationViewController.swift in Sources */,
+				9DFEAEC922CA2848000FB757 /* HitTestView.swift in Sources */,
 				9D547C1022CA0CAF001D8872 /* AppDelegate.swift in Sources */,
+				9DFEAECC22CA2848000FB757 /* UIColor+extensions.swift in Sources */,
+				9D70BCC722CA472300EF18AD /* StringCategory.swift in Sources */,
+				9DFEAED022CA2848000FB757 /* HttpOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +552,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = alignDev/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -440,6 +561,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.align.dev.alignDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "alignDev/Utils/alignDev-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -449,6 +572,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = alignDev/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -457,6 +581,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.align.dev.alignDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "alignDev/Utils/alignDev-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
