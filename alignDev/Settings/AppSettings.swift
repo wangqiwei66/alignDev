@@ -24,7 +24,7 @@ class AppSettings: NSObject {
     }
     
     private let defaultHostUrl = "http://apac-ar-test.herokuapp.com"
-
+    
     var devicePassword:String = "123"
     var organizationId:String?
     
@@ -61,12 +61,17 @@ class AppSettings: NSObject {
         return UserDefaults.standard.double(forKey: Defaults.intervalSendDataKey)
     }
     
-    var userId: String {
-        return UserDefaults.standard.string(forKey: Defaults.userIdKey) ?? ""
+    var userId: Int? {
+        
+        set {
+            let userDefaults = UserDefaults.standard
+            userDefaults.setValue(newValue, forKey: Defaults.userIdKey)
+            userDefaults.synchronize()
+        }
+        get{
+            return UserDefaults.standard.integer(forKey: Defaults.userIdKey)
+        }
     }
-    var tenant_id: String = ""
-    var mobile_phone:String = ""
-    var mo_id: String = ""
     
     var userName: String? {
         
@@ -78,7 +83,7 @@ class AppSettings: NSObject {
         get{
             return UserDefaults.standard.string(forKey: Defaults.usernameKey)
         }
-            }
+    }
     
     var userEmail: String? {
         
@@ -114,7 +119,7 @@ class AppSettings: NSObject {
         }
     }
     
-    func runHandlerOnFirstLaunch(firstLaunchHandler: () -> ()) {
+    func isFirstLaunch(firstLaunchHandler: () -> ()) {
         // grab user defaults
         let userDefaults = UserDefaults.standard
         // check if first launch

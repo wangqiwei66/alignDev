@@ -25,6 +25,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIViewHitTestDel
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
+        emailL.text = AppSettings.sharedInstance.userEmail ?? ""
     }
     
     @IBAction func registerClicked(_ sender: Any) {
@@ -39,18 +40,30 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIViewHitTestDel
             return
         }
         
-        guard (pwdL.text?.lengthOfBytes(using: .utf8))! > 8 else {
+        guard (pwdL.text?.lengthOfBytes(using: .utf8))! >= 8 else {
             self.alert(msg: "password length less than 8 .")
             return
         }
         iGBSProgressHUD.showWaiting(view: self.view, label: "Loging in...")
-        HttpOperation.sharedInstance.postLogin(emailL.text!, pwd: pwdL.text!, success: {[weak self] (dic) in
+        HttpOperation.sharedInstance.login(emailL.text!, pwd: pwdL.text!, success: {[weak self] (dic) in
             guard let sself = self else { return }
             
             DispatchQueue.main.async(){
-                
                 iGBSProgressHUD.stopWaiting()
+                if let token = dic["authentication_token"] as? String{
+                    AppSettings.sharedInstance.deviceToken = token
+                }
+                
+                if let mail = dic["email"] as? String{
+                    AppSettings.sharedInstance.userEmail = mail
+                }
+                
+                if let ID = dic["id"] as? Int{
+                    AppSettings.sharedInstance.userId = ID
+                }
+                sself.alert(msg: "Sign in Success!")
             }
+            
             
         }){[weak self] (code, msg) in
             guard let sself = self else { return }
@@ -60,22 +73,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIViewHitTestDel
                 sself.pwdL.text = ""
             }
         }
-//        HttpOperation.sharedInstance.login(emailL.text!, pwd: pwdL.text!, success: {[weak self] (dic) in
-//            guard let sself = self else { return }
-//
-//            DispatchQueue.main.async(){
-//
-//                iGBSProgressHUD.stopWaiting()
-//            }
-//
-//        }) {[weak self] (code, msg) in
-//            guard let sself = self else { return }
-//            DispatchQueue.main.async(){
-//                iGBSProgressHUD.stopWaiting()
-//                sself.alert(msg: "Login error, \(msg)")
-//                sself.pwdL.text = ""
-//            }
-//        }
+
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
