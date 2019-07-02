@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="alignDev" customModuleProvider="target">
+            <connections>
+                <outlet property="greetningL" destination="SGT-FF-49n" id="D0E-HD-lSr"/>
+                <outlet property="noLabel" destination="Zja-HE-Ohv" id="c0B-8B-4Jt"/>
+                <outlet property="tableView" destination="p0R-rF-zfR" id="OMb-FC-vkA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGT-FF-49n">
+                    <rect key="frame" x="43" y="40" width="208" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="423-Ay-iZl"/>
+                        <constraint firstAttribute="width" constant="208" id="8Ny-av-PsK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCW-uQ-DnY">
+                    <rect key="frame" x="259" y="40" width="84" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="WKF-II-uF5"/>
+                        <constraint firstAttribute="width" constant="84" id="f1k-hf-jxT"/>
+                    </constraints>
+                    <state key="normal" title="LogOut" backgroundImage="buttonBg"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kgm-Ob-tXn">
+                    <rect key="frame" x="43" y="93" width="214" height="46"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="214" id="4ZR-Cg-SeE"/>
+                        <constraint firstAttribute="height" constant="46" id="b90-o5-okh"/>
+                    </constraints>
+                    <state key="normal" title="Book New Seat" backgroundImage="buttonBg"/>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p0R-rF-zfR">
+                    <rect key="frame" x="0.0" y="164" width="375" height="503"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="no booked seats." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zja-HE-Ohv">
+                    <rect key="frame" x="89.5" y="398.5" width="196" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="3ce-KS-Zic"/>
+                        <constraint firstAttribute="width" constant="196" id="3m5-2V-dU4"/>
+                        <constraint firstAttribute="height" constant="34" id="ALp-jb-bua"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="196" id="VNW-QL-0Wh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.44705882349999998" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="p0R-rF-zfR" firstAttribute="top" secondItem="Kgm-Ob-tXn" secondAttribute="bottom" constant="25" id="10Z-qt-8i2"/>
+                <constraint firstItem="Zja-HE-Ohv" firstAttribute="centerX" secondItem="p0R-rF-zfR" secondAttribute="centerX" id="3y5-r9-sgx"/>
+                <constraint firstItem="SGT-FF-49n" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="43" id="6wV-Iw-cYL"/>
+                <constraint firstItem="SGT-FF-49n" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="C5P-0L-Yyn"/>
+                <constraint firstItem="p0R-rF-zfR" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="OAJ-N9-GLj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hCW-uQ-DnY" secondAttribute="trailing" constant="32" id="aBH-3E-7bU"/>
+                <constraint firstItem="p0R-rF-zfR" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="aH0-ph-LIP"/>
+                <constraint firstItem="hCW-uQ-DnY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="d1T-PG-XBx"/>
+                <constraint firstItem="Zja-HE-Ohv" firstAttribute="centerY" secondItem="p0R-rF-zfR" secondAttribute="centerY" id="flp-jj-KcE"/>
+                <constraint firstItem="Kgm-Ob-tXn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="43" id="ukS-5D-GQX"/>
+                <constraint firstItem="Kgm-Ob-tXn" firstAttribute="top" secondItem="SGT-FF-49n" secondAttribute="bottom" constant="27" id="vDe-fm-fQv"/>
+                <constraint firstItem="p0R-rF-zfR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yhQ-VV-FzH"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="130.40000000000001" y="152.47376311844079"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="buttonBg" width="282" height="48"/>
+    </resources>
+</document>

@@ -19,6 +19,11 @@
 		9D70BCC422CA3FEC00EF18AD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D70BCC122CA3FEC00EF18AD /* Constants.swift */; };
 		9D70BCC522CA3FEC00EF18AD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D70BCC222CA3FEC00EF18AD /* Settings.bundle */; };
 		9D70BCC722CA472300EF18AD /* StringCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D70BCC622CA472300EF18AD /* StringCategory.swift */; };
+		9DC3080D22CACFE2004C7033 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC3080B22CACFE2004C7033 /* HomeViewController.swift */; };
+		9DC3080E22CACFE2004C7033 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DC3080C22CACFE2004C7033 /* HomeViewController.xib */; };
+		9DC3081122CADD6B004C7033 /* SeatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC3080F22CADD6B004C7033 /* SeatTableViewCell.swift */; };
+		9DC3081222CADD6B004C7033 /* SeatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DC3081022CADD6B004C7033 /* SeatTableViewCell.xib */; };
+		9DC3081422CADDCB004C7033 /* SeatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC3081322CADDCB004C7033 /* SeatsModel.swift */; };
 		9DFEAEB222CA1F52000FB757 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEAEB022CA1F51000FB757 /* LoginViewController.swift */; };
 		9DFEAEB322CA1F52000FB757 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DFEAEB122CA1F52000FB757 /* LoginViewController.xib */; };
 		9DFEAEB522CA2094000FB757 /* UIViewControllerCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEAEB422CA2094000FB757 /* UIViewControllerCategory.swift */; };
@@ -70,6 +75,11 @@
 		9D70BCC122CA3FEC00EF18AD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = alignDev/Settings/Constants.swift; sourceTree = SOURCE_ROOT; };
 		9D70BCC222CA3FEC00EF18AD /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = alignDev/Settings/Settings.bundle; sourceTree = SOURCE_ROOT; };
 		9D70BCC622CA472300EF18AD /* StringCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCategory.swift; sourceTree = "<group>"; };
+		9DC3080B22CACFE2004C7033 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9DC3080C22CACFE2004C7033 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		9DC3080F22CADD6B004C7033 /* SeatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatTableViewCell.swift; sourceTree = "<group>"; };
+		9DC3081022CADD6B004C7033 /* SeatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeatTableViewCell.xib; sourceTree = "<group>"; };
+		9DC3081322CADDCB004C7033 /* SeatsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsModel.swift; sourceTree = "<group>"; };
 		9DFEAEB022CA1F51000FB757 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9DFEAEB122CA1F52000FB757 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		9DFEAEB422CA2094000FB757 /* UIViewControllerCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerCategory.swift; sourceTree = "<group>"; };
@@ -186,6 +196,8 @@
 				9DFEAEB122CA1F52000FB757 /* LoginViewController.xib */,
 				9D547C3D22CA0D48001D8872 /* RegistrationViewController.swift */,
 				9D547C3E22CA0D48001D8872 /* RegistrationViewController.xib */,
+				9DC3080B22CACFE2004C7033 /* HomeViewController.swift */,
+				9DC3080C22CACFE2004C7033 /* HomeViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -215,6 +227,8 @@
 		9DFEAED122CA2A6B000FB757 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9DC3080F22CADD6B004C7033 /* SeatTableViewCell.swift */,
+				9DC3081022CADD6B004C7033 /* SeatTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -222,6 +236,7 @@
 		9DFEAED222CA2A75000FB757 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9DC3081322CADDCB004C7033 /* SeatsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -334,8 +349,10 @@
 				9DFEAEB322CA1F52000FB757 /* LoginViewController.xib in Resources */,
 				9D547C1A22CA0CB1001D8872 /* LaunchScreen.storyboard in Resources */,
 				9D547C1722CA0CB1001D8872 /* Assets.xcassets in Resources */,
+				9DC3081222CADD6B004C7033 /* SeatTableViewCell.xib in Resources */,
 				9D547C4022CA0D48001D8872 /* RegistrationViewController.xib in Resources */,
 				9D70BCC522CA3FEC00EF18AD /* Settings.bundle in Resources */,
+				9DC3080E22CACFE2004C7033 /* HomeViewController.xib in Resources */,
 				9D547C1522CA0CAF001D8872 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,11 +379,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DFEAECE22CA2848000FB757 /* StyleKit.swift in Sources */,
+				9DC3081122CADD6B004C7033 /* SeatTableViewCell.swift in Sources */,
 				9DFEAECB22CA2848000FB757 /* UIViewCategory.m in Sources */,
 				9DFEAEC722CA2848000FB757 /* HttpUtils.swift in Sources */,
 				9DFEAEC522CA2848000FB757 /* iGBSProgressHUD.swift in Sources */,
 				9DFEAECA22CA2848000FB757 /* UILabelExtensions.swift in Sources */,
+				9DC3080D22CACFE2004C7033 /* HomeViewController.swift in Sources */,
 				9DFEAEC622CA2848000FB757 /* MBProgressHUD.m in Sources */,
+				9DC3081422CADDCB004C7033 /* SeatsModel.swift in Sources */,
 				9DFEAEB522CA2094000FB757 /* UIViewControllerCategory.swift in Sources */,
 				9D70BCC422CA3FEC00EF18AD /* Constants.swift in Sources */,
 				9DFEAEB222CA1F52000FB757 /* LoginViewController.swift in Sources */,

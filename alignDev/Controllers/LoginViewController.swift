@@ -61,7 +61,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIViewHitTestDel
                 if let ID = dic["id"] as? Int{
                     AppSettings.sharedInstance.userId = ID
                 }
-                sself.alert(msg: "Sign in Success!")
+                let vc = HomeViewController.init(nibName: "HomeViewController", bundle: nil)
+                sself.navigationController?.pushViewController(vc, animated: true)
+
             }
             
             

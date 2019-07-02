@@ -97,6 +97,41 @@ class HttpOperation: NSObject {
         }
         task.resume()
     }
-    
+    func getBooklist(success: @escaping ((NSArray) -> Void), failure: @escaping ((Int, String) -> Void) ){
+        //9.112.229.66
+        let url = hostUrl + "/bookings.json?X-User-Email=\(AppSettings.sharedInstance.userEmail!)&X-User-Token=\(AppSettings.sharedInstance.deviceToken!)"
+        var request = URLRequest(url: URL(string: url)!)
+        print("getBooklist ,url:\(url)")
+        request.httpMethod = "GET"
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard error == nil else { // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                failure(-1,error.debugDescription)
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
+                failure(-1,String(describing: response))
+                return
+            }
+            
+//            let str = String.init(data: data!, encoding: .utf8)
+//            print("dataStr:\(str)")
+            if data != nil, let array : NSArray = try!JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSArray{
+                print("data:\(array)")
+                let myArray = array.filter({ (item) -> Bool in
+                    let dic = item as! NSDictionary
+                    return dic["user_id"] as? Int == AppSettings.sharedInstance.userId!
+                })
+                success(myArray as NSArray)
+                return
+            }
+            
+
+        }
+        task.resume()
+    }
 
 }
