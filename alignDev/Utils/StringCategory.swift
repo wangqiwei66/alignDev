@@ -14,4 +14,12 @@ extension String{
         return predicate.evaluate(with:self)
     }
     
+    func toDate()->Date?{
+        let formatter = DateFormatter()
+        formatter.timeZone = NSTimeZone.local//TimeZone(identifier: "GMT")
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        let date = formatter.date(from: self)
+        return date
+    }
+    
 }

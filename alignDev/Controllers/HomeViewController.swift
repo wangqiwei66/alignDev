@@ -16,7 +16,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     @IBOutlet weak var greetningL: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noLabel: UILabel!
-    private var data = [String]()
+    private var data = [SeatsModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,6 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,12 +32,19 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     private func requestData(){
+
         iGBSProgressHUD.showWaiting(view: self.view, label: "requesting booked seats...")
-        HttpOperation.sharedInstance.getBooklist(success: {[weak self] (dic) in
+        HttpOperation.sharedInstance.getBooklist(success: {[weak self] (data) in
             guard let sself = self else { return }
             
             DispatchQueue.main.async(){
                 iGBSProgressHUD.stopWaiting()
+                for  dic in data{
+                    let seat = SeatsModel(dic as! NSDictionary)
+                    sself.data.append(seat)
+                }
+                
+                sself.tableView.reloadData()
 
             }
             
@@ -50,7 +56,11 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             }
         }
     }
-
+    @IBAction func newCLicked(_ sender: Any) {
+        let vc = BookSeatViewController(nibName: "BookSeatViewController", bundle: nil)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     //MARK:- TableViewDelegate/DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let empty = data.isEmpty
