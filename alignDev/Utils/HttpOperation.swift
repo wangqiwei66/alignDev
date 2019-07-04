@@ -8,7 +8,7 @@
 
 import Foundation
 class HttpOperation: NSObject {
-
+    
     var hostUrl:String{
         get{
             return AppSettings.sharedInstance.hostUrl
@@ -57,7 +57,7 @@ class HttpOperation: NSObject {
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(String(describing: response))")
-//                failure(httpStatus.statusCode,httpStatus.)
+                //                failure(httpStatus.statusCode,httpStatus.)
                 return
             }
         }
@@ -99,46 +99,11 @@ class HttpOperation: NSObject {
     }
     func getBooklist(success: @escaping ((NSArray) -> Void), failure: @escaping ((Int, String) -> Void) ){
         //9.112.229.66
-        let url = hostUrl + "/bookings.json?X-User-Email=\(AppSettings.sharedInstance.userEmail!)&X-User-Token=\(AppSettings.sharedInstance.deviceToken!)"
+        let url = hostUrl + "/bookings.json"
         var request = URLRequest(url: URL(string: url)!)
         print("getBooklist ,url:\(url)")
-        request.httpMethod = "GET"
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard error == nil else { // check for fundamental networking error
-                print("error=\(String(describing: error))")
-                failure(-1,error.debugDescription)
-                return
-            }
-            
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(String(describing: response))")
-                failure(-1,String(describing: response))
-                return
-            }
-            
-//            let str = String.init(data: data!, encoding: .utf8)
-//            print("dataStr:\(str)")
-            if data != nil, let array : NSArray = try!JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSArray{
-                print("data:\(array)")
-//                let myArray = array.filter({ (item) -> Bool in
-//                    let dic = item as! NSDictionary
-//                    return dic["user_id"] as? Int == AppSettings.sharedInstance.userId!
-//                })
-                success(array as NSArray)
-                return
-            }
-            
-
-        }
-        task.resume()
-    }
-    
-    func getDesks(success: @escaping ((Data) -> Void), failure: @escaping ((Int, String) -> Void) ){
-        //9.112.229.66
-        let url = hostUrl + "/desks?X-User-Email=\(AppSettings.sharedInstance.userEmail!)&X-User-Token=\(AppSettings.sharedInstance.deviceToken!)"
-        var request = URLRequest(url: URL(string: url)!)
-        print("getDesks ,url:\(url)")
+        request.addValue("AppSettings.sharedInstance.userEmail!", forHTTPHeaderField: "X-User-Email")
+        request.addValue("AppSettings.sharedInstance.deviceToken!", forHTTPHeaderField: "X-User-Token")
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard error == nil else { // check for fundamental networking error
@@ -156,8 +121,13 @@ class HttpOperation: NSObject {
             
             //            let str = String.init(data: data!, encoding: .utf8)
             //            print("dataStr:\(str)")
-            if let da = data{
-                success(da)
+            if data != nil, let array : NSArray = try!JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSArray{
+                print("data:\(array)")
+                let myArray = array.filter({ (item) -> Bool in
+                    let dic = item as! NSDictionary
+                    return dic["user_id"] as? Int == AppSettings.sharedInstance.userId!
+                })
+                success(myArray as NSArray)
                 return
             }
             
@@ -165,5 +135,78 @@ class HttpOperation: NSObject {
         }
         task.resume()
     }
-
+    
+    func getDesks(success: @escaping ((NSArray) -> Void), failure: @escaping ((Int, String) -> Void) ){
+        //9.112.229.66
+        let url = hostUrl + "/desks.json"
+        var request = URLRequest(url: URL(string: url)!)
+        print("getDesks ,url:\(url)")
+        request.addValue("AppSettings.sharedInstance.userEmail!", forHTTPHeaderField: "X-User-Email")
+        request.addValue("AppSettings.sharedInstance.deviceToken!", forHTTPHeaderField: "X-User-Token")
+        request.httpMethod = "GET"
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard error == nil else { // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                failure(-1,error.debugDescription)
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
+                failure(-1,String(describing: response))
+                return
+            }
+            
+            if data != nil, let seats : NSArray = try!JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSArray{
+                print("seats:\(seats)")
+                //            let str = String.init(data: data!, encoding: .utf8)
+                //            print("dataStr:\(str)")
+                success(seats)
+                return
+            }
+        }
+        task.resume()
+    }
+    
+    func book(desk:String,start:String,end:String,success: @escaping ((NSDictionary) -> Void), failure: @escaping ((Int, String) -> Void) ){
+        //9.112.229.66
+        let url = hostUrl + "/bookings.json"
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = "POST"
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.init(identifier: "GMT")
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        let now = formatter.string(from: Date())
+        let postString = "booking[desk_id]=\(desk)&booking[booked_at]=\(now)&booking[booked_from]=\(start)&booking[booked_to]=\(end)"
+        request.httpBody = postString.data(using: .utf8)
+        request.addValue("AppSettings.sharedInstance.userEmail!", forHTTPHeaderField: "X-User-Email")
+        request.addValue("AppSettings.sharedInstance.deviceToken!", forHTTPHeaderField: "X-User-Token")
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard error == nil else { // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                failure(-1,error.debugDescription)
+                return
+            }
+            
+            if data != nil, let dictionary : NSDictionary = try!JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary{
+                print("data:\(dictionary)")
+                if let err = dictionary["error"] as? String{
+                    failure(-1,err)
+                    return
+                }
+                
+                success(dictionary)
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
+                return
+            }
+        }
+        task.resume()
+    }
+    
 }
