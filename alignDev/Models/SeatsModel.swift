@@ -115,7 +115,7 @@ class SeatsModel:NSObject {
             self.desk = DeskModel(desk)
         }
         
-        if let user = data["desk"] as? NSDictionary{
+        if let user = data["user"] as? NSDictionary{
             self.user = UserModel(user)
         }
 

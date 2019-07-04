@@ -10,16 +10,31 @@ import UIKit
 
 class SeatTableViewCell: UITableViewCell {
 
-    @IBOutlet var leadingCon: NSLayoutConstraint!
-    @IBOutlet var type: UILabel!
-    @IBOutlet var content: UILabel!
-    @IBOutlet var unreadDot: UIImageView!
+    @IBOutlet weak var desk: UILabel!
+    @IBOutlet weak var nameL: UILabel!
+    @IBOutlet var dateL: UILabel!
+    
     var model:SeatsModel? {
         didSet{
             guard let mo = model else {
                 return
             }
+            
+            if let label = mo.desk?.label{
+                desk.text = label
+            }
+            
+            if let name = mo.user?.email{
+                nameL.text = name
+            }
 
+            let formatter = DateFormatter()
+            formatter.timeZone = NSTimeZone.local
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+            
+            if let fromDate = formatter.date(from: mo.bookedFrom),let endDate = formatter.date(from: mo.bookedTo){
+                dateL.text = "\(fromDate) To \(endDate)"
+            }
 
         }
     }
@@ -30,8 +45,5 @@ class SeatTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
 }

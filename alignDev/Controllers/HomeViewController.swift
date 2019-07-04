@@ -25,14 +25,17 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        noLabel.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+
         requestData()
     }
     
     private func requestData(){
-
+        self.data.removeAll()
         iGBSProgressHUD.showWaiting(view: self.view, label: "requesting booked seats...")
         HttpOperation.sharedInstance.getBooklist(success: {[weak self] (data) in
             guard let sself = self else { return }
@@ -79,6 +82,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_INDENTIFIER, for: indexPath) as! SeatTableViewCell
+        cell.model = data[indexPath.row]
         return cell
     }
     
