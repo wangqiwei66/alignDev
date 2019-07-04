@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		9D18949122CC869E0034958E /* BookSeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18948F22CC869E0034958E /* BookSeatViewController.swift */; };
 		9D18949222CC869E0034958E /* BookSeatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D18949022CC869E0034958E /* BookSeatViewController.xib */; };
-		9D18949522CC8DC40034958E /* SeatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18949322CC8DC40034958E /* SeatsViewController.swift */; };
-		9D18949622CC8DC40034958E /* SeatsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D18949422CC8DC40034958E /* SeatsViewController.xib */; };
+		9D53FDDF22CDF758005AF453 /* SeatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53FDDD22CDF758005AF453 /* SeatDetailViewController.swift */; };
+		9D53FDE022CDF758005AF453 /* SeatDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D53FDDE22CDF758005AF453 /* SeatDetailViewController.xib */; };
 		9D547C1022CA0CAF001D8872 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D547C0F22CA0CAF001D8872 /* AppDelegate.swift */; };
 		9D547C1522CA0CAF001D8872 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D547C1322CA0CAF001D8872 /* Main.storyboard */; };
 		9D547C1722CA0CB1001D8872 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D547C1622CA0CB1001D8872 /* Assets.xcassets */; };
@@ -63,8 +63,8 @@
 /* Begin PBXFileReference section */
 		9D18948F22CC869E0034958E /* BookSeatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSeatViewController.swift; sourceTree = "<group>"; };
 		9D18949022CC869E0034958E /* BookSeatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookSeatViewController.xib; sourceTree = "<group>"; };
-		9D18949322CC8DC40034958E /* SeatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsViewController.swift; sourceTree = "<group>"; };
-		9D18949422CC8DC40034958E /* SeatsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeatsViewController.xib; sourceTree = "<group>"; };
+		9D53FDDD22CDF758005AF453 /* SeatDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatDetailViewController.swift; sourceTree = "<group>"; };
+		9D53FDDE22CDF758005AF453 /* SeatDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeatDetailViewController.xib; sourceTree = "<group>"; };
 		9D547C0C22CA0CAF001D8872 /* alignDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alignDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D547C0F22CA0CAF001D8872 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D547C1422CA0CAF001D8872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -208,8 +208,8 @@
 				9DC3080C22CACFE2004C7033 /* HomeViewController.xib */,
 				9D18948F22CC869E0034958E /* BookSeatViewController.swift */,
 				9D18949022CC869E0034958E /* BookSeatViewController.xib */,
-				9D18949322CC8DC40034958E /* SeatsViewController.swift */,
-				9D18949422CC8DC40034958E /* SeatsViewController.xib */,
+				9D53FDDD22CDF758005AF453 /* SeatDetailViewController.swift */,
+				9D53FDDE22CDF758005AF453 /* SeatDetailViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -362,10 +362,10 @@
 				9D547C1A22CA0CB1001D8872 /* LaunchScreen.storyboard in Resources */,
 				9D547C1722CA0CB1001D8872 /* Assets.xcassets in Resources */,
 				9DC3081222CADD6B004C7033 /* SeatTableViewCell.xib in Resources */,
+				9D53FDE022CDF758005AF453 /* SeatDetailViewController.xib in Resources */,
 				9D18949222CC869E0034958E /* BookSeatViewController.xib in Resources */,
 				9D547C4022CA0D48001D8872 /* RegistrationViewController.xib in Resources */,
 				9D70BCC522CA3FEC00EF18AD /* Settings.bundle in Resources */,
-				9D18949622CC8DC40034958E /* SeatsViewController.xib in Resources */,
 				9DC3080E22CACFE2004C7033 /* HomeViewController.xib in Resources */,
 				9D547C1522CA0CAF001D8872 /* Main.storyboard in Resources */,
 			);
@@ -403,8 +403,8 @@
 				9DFEAEC622CA2848000FB757 /* MBProgressHUD.m in Sources */,
 				9DC3081422CADDCB004C7033 /* SeatsModel.swift in Sources */,
 				9DFEAEB522CA2094000FB757 /* UIViewControllerCategory.swift in Sources */,
-				9D18949522CC8DC40034958E /* SeatsViewController.swift in Sources */,
 				9D70BCC422CA3FEC00EF18AD /* Constants.swift in Sources */,
+				9D53FDDF22CDF758005AF453 /* SeatDetailViewController.swift in Sources */,
 				9DFEAEB222CA1F52000FB757 /* LoginViewController.swift in Sources */,
 				9D70BCC322CA3FEC00EF18AD /* AppSettings.swift in Sources */,
 				9DFEAEC822CA2848000FB757 /* DataExtension.swift in Sources */,
