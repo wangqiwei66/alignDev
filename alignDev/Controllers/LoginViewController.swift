@@ -24,7 +24,10 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIViewHitTestDel
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController?.navigationBar.tintColor = .white
         emailL.text = AppSettings.sharedInstance.userEmail ?? ""
     }
     

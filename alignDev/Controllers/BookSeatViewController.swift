@@ -15,6 +15,7 @@ class BookSeatViewController: UIViewController,UIActionSheetDelegate {
     @IBOutlet weak var deskL: UILabel!
     @IBOutlet weak var datePickerView: UIView!
     private var desks = [DeskModel]()
+    private var deskIndex = -1
     private var startDate = ""
     private var endDate = ""
     
@@ -73,7 +74,7 @@ class BookSeatViewController: UIViewController,UIActionSheetDelegate {
             startDate = ""
             endDate = ""
         }
-        
+
         pickerYCons.constant = 0
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
@@ -102,8 +103,9 @@ class BookSeatViewController: UIViewController,UIActionSheetDelegate {
             }
             _ = SeatsModel(dic)
 
-            sself.alert(msg: "Book Success!")
-            sself.navigationController?.popViewController(animated: true)
+            sself.alert(nil, msg: "Book Success!", yetTitle: "OK", handleYes: { (action) in
+                sself.navigationController?.popViewController(animated: true)
+            }, noTitle: nil, handleNo: nil)
         }){[weak self] (code, msg) in
             guard let sself = self else { return }
             DispatchQueue.main.async(){
@@ -126,8 +128,9 @@ class BookSeatViewController: UIViewController,UIActionSheetDelegate {
     
     func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int){
         if buttonIndex > 0{
-            deskL.text = desks[buttonIndex-1].label
-            deskID = desks[buttonIndex-1].ID
+            deskIndex = buttonIndex - 1
+            deskL.text = desks[deskIndex].label
+            deskID = desks[deskIndex].ID
         }
     }
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -68,23 +68,11 @@
                         <action selector="RegisterClicked:" destination="-1" eventType="touchUpInside" id="dfh-RD-hCh"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnn-IX-Xtd">
-                    <rect key="frame" x="50" y="31" width="44" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="Hyr-Yj-nTw"/>
-                        <constraint firstAttribute="width" constant="44" id="eAt-b4-cWV"/>
-                    </constraints>
-                    <state key="normal" image="backBtn"/>
-                    <connections>
-                        <action selector="backClicked:" destination="-1" eventType="touchUpInside" id="lSp-aL-FLR"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="4xp-ud-KR4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="2WZ-0i-FNX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="c94-oE-E8c" secondAttribute="trailing" constant="50" id="753-9m-mRj"/>
-                <constraint firstItem="bnn-IX-Xtd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="B0d-Ir-NfQ"/>
                 <constraint firstItem="X4J-oj-i4x" firstAttribute="top" secondItem="4xp-ud-KR4" secondAttribute="bottom" constant="100" id="C6X-Tc-mpw"/>
                 <constraint firstItem="J7w-MQ-3wr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="MOf-MR-Kzv"/>
                 <constraint firstItem="X4J-oj-i4x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="Sbw-8I-ece"/>
@@ -97,7 +85,6 @@
                 <constraint firstItem="NKI-Fc-g2d" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iFI-S5-oDL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NKI-Fc-g2d" secondAttribute="trailing" id="oif-74-Hua"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4xp-ud-KR4" secondAttribute="trailing" constant="50" id="s00-cQ-iwf"/>
-                <constraint firstItem="bnn-IX-Xtd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="11" id="u4G-YA-CIO"/>
                 <constraint firstItem="c94-oE-E8c" firstAttribute="top" secondItem="J7w-MQ-3wr" secondAttribute="bottom" constant="40" id="ueL-oj-o0I"/>
                 <constraint firstAttribute="bottom" secondItem="NKI-Fc-g2d" secondAttribute="bottom" id="wpH-IW-s13"/>
             </constraints>
@@ -106,8 +93,7 @@
         </view>
     </objects>
     <resources>
-        <image name="backBtn" width="40" height="36"/>
-        <image name="background" width="750" height="1334"/>
+        <image name="background" width="375" height="667"/>
         <image name="buttonBg" width="282" height="48"/>
     </resources>
 </document>

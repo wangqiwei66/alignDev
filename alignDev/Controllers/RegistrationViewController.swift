@@ -25,7 +25,11 @@ class RegistrationViewController: UIViewController,UITextFieldDelegate,UIViewHit
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController?.navigationBar.tintColor = .white
+        
     }
     
     @IBAction func RegisterClicked(_ sender: Any) {
@@ -63,7 +67,9 @@ class RegistrationViewController: UIViewController,UITextFieldDelegate,UIViewHit
             if let ID = dic["id"] as? Int{
                 AppSettings.sharedInstance.userId = ID
             }
-            sself.alert(msg: "Sign up Success!")
+            sself.alert(nil, msg: "Sign up Success!", yetTitle: "OK", handleYes: { (action) in
+                sself.navigationController?.pushViewController(LoginViewController(), animated: true)
+            }, noTitle: nil, handleNo: nil)
         }){[weak self] (code, msg) in
             guard let sself = self else { return }
             DispatchQueue.main.async(){
